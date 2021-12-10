@@ -20,19 +20,19 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
-- task: CopyFiles@2
-  inputs:
-    Contents: 'dist/**' # Pull the build directory (React)
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+#- task: CopyFiles@2
+#  inputs:
+#    Contents: 'dist/**' # Pull the build directory (React)
+#    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    rootFolderOrFile: 'dist'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/angular.zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
   inputs: 
     PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-    ArtifactName: '$(Build.BuildId).zip' # output artifact named www
+    ArtifactName: 'angular.zip' # output artifact named www
