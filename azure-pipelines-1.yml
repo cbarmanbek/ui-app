@@ -48,16 +48,3 @@ steps:
   inputs: 
     PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
     ArtifactName: 'angular.zip' # output artifact named www
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
