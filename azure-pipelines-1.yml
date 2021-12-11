@@ -20,6 +20,7 @@ steps:
       cd src
       cd app
       sed -i 's/__header__/cemil/g' app.component.html
+      cat app.component.html
 - task: NodeTool@0
   inputs:
     versionSpec: '16.13.1'
