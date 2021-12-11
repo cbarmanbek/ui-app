@@ -21,11 +21,13 @@ steps:
       cd app
       sed -i 's/__header__/cemil/g' app.component.html
       cat app.component.html
+
 - task: NodeTool@0
   inputs:
     versionSpec: '16.13.1'
   displayName: 'Install Node.js'
-- script:
+
+- script: |
     npm install -g @angular/cli
     npm install
     ng build --prod
@@ -46,3 +48,16 @@ steps:
   inputs: 
     PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
     ArtifactName: 'angular.zip' # output artifact named www
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
