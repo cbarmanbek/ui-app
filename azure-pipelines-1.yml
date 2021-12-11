@@ -22,6 +22,9 @@ steps:
       
       echo 'Hello world'
       ls
+      cd src
+      cd app
+      sed -i 's/__header__/cemil/g' app.component.html
 - script:
     npm install -g @angular/cli
     npm install
