@@ -14,12 +14,14 @@ steps:
   inputs:
     versionSpec: '16.13.1'
   displayName: 'Install Node.js'
-
-- task: PowerShell@2
+- task: Bash@3
   inputs:
     targetType: 'inline'
-    script: '((Get-Content -path ui-app\src\app\app.component.html -Raw) -replace ''__header__'',''white'') | Set-Content -Path ui-app\src\app\app.component.html'
-
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
+      ls
 - script:
     npm install -g @angular/cli
     npm install
